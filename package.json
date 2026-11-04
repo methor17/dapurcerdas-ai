@@ -1,0 +1,15 @@
+{
+  "name": "dapurcerdas-ai",
+  "version": "9.0.0",
+  "description": "DapurCerdas AI v9: 768 resep dan variasi Nusantara, Google, Ollama, 7 hari dan daftar belanja opt-in",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node server.mjs",
+    "dev": "node --watch server.mjs",
+    "test": "node --test"
+  }
+}

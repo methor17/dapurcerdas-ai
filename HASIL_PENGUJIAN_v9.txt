@@ -1,0 +1,165 @@
+
+> dapurcerdas-ai@9.0.0 test
+> node --test
+
+TAP version 13
+# Subtest: katalog 600+ resep & variasi unik
+ok 1 - katalog 600+ resep & variasi unik
+  ---
+  duration_ms: 1.492828
+  type: 'test'
+  ...
+# Subtest: setiap resep memiliki bahan lengkap dan langkah berurutan
+ok 2 - setiap resep memiliki bahan lengkap dan langkah berurutan
+  ---
+  duration_ms: 6.070994
+  type: 'test'
+  ...
+# Subtest: variasi menambahkan proses memasak dan bahan atau takaran baru
+ok 3 - variasi menambahkan proses memasak dan bahan atau takaran baru
+  ---
+  duration_ms: 4.750796
+  type: 'test'
+  ...
+# Subtest: hidangan daerah dapat dicari dari metadata wilayah
+ok 4 - hidangan daerah dapat dicari dari metadata wilayah
+  ---
+  duration_ms: 0.300143
+  type: 'test'
+  ...
+# Subtest: contoh resep Nusantara lengkap
+ok 5 - contoh resep Nusantara lengkap
+  ---
+  duration_ms: 0.286081
+  type: 'test'
+  ...
+# Subtest: timeout recovery contract: length => resumable, second request resumes last step
+ok 6 - timeout recovery contract: length => resumable, second request resumes last step
+  ---
+  duration_ms: 183.646044
+  type: 'test'
+  ...
+# Subtest: stream chat memberi token bertahap, plan-refine satu request dan semua endpoint bisa dipanggil
+ok 7 - stream chat memberi token bertahap, plan-refine satu request dan semua endpoint bisa dipanggil
+  ---
+  duration_ms: 279.632528
+  type: 'test'
+  ...
+# Subtest: Menu cepat tersedia dan AI disimpan per-slot (termasuk pause/resume)
+ok 8 - Menu cepat tersedia dan AI disimpan per-slot (termasuk pause/resume)
+  ---
+  duration_ms: 1.727532
+  type: 'test'
+  ...
+# Subtest: Ide inspirasi juga dapat disimpan bertahap
+ok 9 - Ide inspirasi juga dapat disimpan bertahap
+  ---
+  duration_ms: 0.193792
+  type: 'test'
+  ...
+# Subtest: Integrasi lokal Ollama: health, generate schema, chat
+ok 10 - Integrasi lokal Ollama: health, generate schema, chat
+  ---
+  duration_ms: 199.176526
+  type: 'test'
+  ...
+# Subtest: Rencana seminggu tidak otomatis menjadi belanja
+ok 11 - Rencana seminggu tidak otomatis menjadi belanja
+  ---
+  duration_ms: 1.223633
+  type: 'test'
+  ...
+# Subtest: Favorit tidak otomatis menjadi belanja (hanya recipe selections dihitung)
+ok 12 - Favorit tidak otomatis menjadi belanja (hanya recipe selections dihitung)
+  ---
+  duration_ms: 0.230297
+  type: 'test'
+  ...
+# Subtest: Cari Bahan pada resep menambah satu kebutuhan
+ok 13 - Cari Bahan pada resep menambah satu kebutuhan
+  ---
+  duration_ms: 0.312581
+  type: 'test'
+  ...
+# Subtest: Hanya slot mingguan yang dipilih masuk belanja
+ok 14 - Hanya slot mingguan yang dipilih masuk belanja
+  ---
+  duration_ms: 0.17925
+  type: 'test'
+  ...
+# Subtest: Resep pada dua hari yang dipilih dihitung dua kali
+ok 15 - Resep pada dua hari yang dipilih dihitung dua kali
+  ---
+  duration_ms: 0.231148
+  type: 'test'
+  ...
+# Subtest: Slot yang menu-nya berubah tidak menjadi belanja
+ok 16 - Slot yang menu-nya berubah tidak menjadi belanja
+  ---
+  duration_ms: 0.15911
+  type: 'test'
+  ...
+# Subtest: Input tidak valid tidak menggandakan
+ok 17 - Input tidak valid tidak menggandakan
+  ---
+  duration_ms: 0.235725
+  type: 'test'
+  ...
+# Subtest: server & UI smoke test tanpa API key
+    # Subtest: Health API mode lokal
+    ok 1 - Health API mode lokal
+      ---
+      duration_ms: 12.331814
+      type: 'test'
+      ...
+    # Subtest: HTML, JS, CSS dapat diakses
+    ok 2 - HTML, JS, CSS dapat diakses
+      ---
+      duration_ms: 16.44609
+      type: 'test'
+      ...
+    # Subtest: AI endpoint tanpa key memberi pesan
+    ok 3 - AI endpoint tanpa key memberi pesan
+      ---
+      duration_ms: 8.160131
+      type: 'test'
+      ...
+    # Subtest: Request invalid dan file yang tidak ada ditangani
+    ok 4 - Request invalid dan file yang tidak ada ditangani
+      ---
+      duration_ms: 5.736596
+      type: 'test'
+      ...
+    1..4
+ok 18 - server & UI smoke test tanpa API key
+  ---
+  duration_ms: 191.518352
+  type: 'test'
+  ...
+# Subtest: input massal termasuk 10kg daging, 2kg ayam
+ok 19 - input massal termasuk 10kg daging, 2kg ayam
+  ---
+  duration_ms: 2.609922
+  type: 'test'
+  ...
+# Subtest: input gram, ons, dan angka desimal Indonesia
+ok 20 - input gram, ons, dan angka desimal Indonesia
+  ---
+  duration_ms: 0.755037
+  type: 'test'
+  ...
+# Subtest: takaran resep dan dimensi satuan
+ok 21 - takaran resep dan dimensi satuan
+  ---
+  duration_ms: 0.893506
+  type: 'test'
+  ...
+1..21
+# tests 25
+# suites 0
+# pass 25
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 657.840251

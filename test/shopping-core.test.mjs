@@ -1,0 +1,15 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {resolveSelectedRecipes} from '../public/shopping-core.js';
+const r1={id:'ayam',title:'Ayam Kecap'};
+const r2={id:'sayur',title:'Sayur Bening'};
+const index=new Map([[r1.id,r1],[r2.id,r2]]);
+const plan=[['ayam','sayur'],['ayam'],['sayur']];
+const run=(parts={})=>resolveSelectedRecipes({recipeIndex:index,plan,...parts});
+test('Rencana seminggu tidak otomatis menjadi belanja',()=>assert.deepEqual(run().map(x=>x.id),[]));
+test('Favorit tidak otomatis menjadi belanja (hanya recipe selections dihitung)',()=>assert.deepEqual(run({favorites:['ayam']}).map(x=>x.id),[]));
+test('Cari Bahan pada resep menambah satu kebutuhan',()=>assert.deepEqual(run({selectedShoppingRecipes:['ayam','ayam']}).map(x=>x.id),['ayam']));
+test('Hanya slot mingguan yang dipilih masuk belanja',()=>assert.deepEqual(run({selectedPlanSlots:[{day:0,slot:1,id:'sayur'}]}).map(x=>x.id),['sayur']));
+test('Resep pada dua hari yang dipilih dihitung dua kali',()=>assert.deepEqual(run({selectedPlanSlots:[{day:0,slot:0,id:'ayam'},{day:1,slot:0,id:'ayam'}]}).map(x=>x.id),['ayam','ayam']));
+test('Slot yang menu-nya berubah tidak menjadi belanja',()=>assert.deepEqual(run({selectedPlanSlots:[{day:0,slot:0,id:'sayur'}]}),[]));
+test('Input tidak valid tidak menggandakan',()=>assert.deepEqual(run({selectedShoppingRecipes:['none'],selectedPlanSlots:[{day:0,slot:0,id:'ayam'},{day:0,slot:0,id:'ayam'},null,{day:30,slot:0,id:'sayur'}]}).map(x=>x.id),['ayam']));
